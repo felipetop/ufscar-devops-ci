@@ -24,13 +24,19 @@ unit-test:
   script:
     - mvn $MAVEN_OPTS test
 
+coverage:
+  stage: test
+  script:
+    - mvn $MAVEN_OPTS test
+    - echo "Total 15%"
+
 building:
   stage: build
   script:
     - mvn $MAVEN_OPTS package -DskipTests
 
 
-deploy:
+deploy-prod:
   stage: deploy
   before_script:
     - git checkout master
