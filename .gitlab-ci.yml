@@ -12,9 +12,6 @@ validate:
   script:
     - mvn validate
 
-codecheck:
-  stage: validate
-
 unit-test:
   stage: test
   script:
